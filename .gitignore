@@ -3,3 +3,7 @@ node_modules/
 .editorconfig
 *.map
 *.component.js
+src/app/app.module.js
+src/app/model/user.model.js
+*.service.js
+src/main.js
