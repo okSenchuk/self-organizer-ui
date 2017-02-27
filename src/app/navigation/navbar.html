@@ -1,0 +1,12 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <ul class="nav">
+            <li *ngIf="!isAuthenticated" class="nav navbar-right">
+                <a routerLinkActive="active" routerLink="/login">Login</a>
+            </li>
+            <li *ngIf="isAuthenticated" class="nav navbar-right" (click)="logout()">
+                <a href="#">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>

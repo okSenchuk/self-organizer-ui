@@ -7,3 +7,4 @@ src/app/app.module.js
 src/app/model/user.model.js
 *.service.js
 src/main.js
+src/app/navigation/navbar.js

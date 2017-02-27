@@ -19,9 +19,4 @@ export class LoginService {
     isAuthenticated(){
         return this.http.get('http://localhost:9000/isAuthenticated');
     }
-    
-    getPrincipalOffice(){
-        return this.http.get('http://localhost:9000/principal/office');
-    }
-
 }
