@@ -11,21 +11,22 @@ export class HttpService {
     doGet(url: string) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.get(url, { headers: headers });
+        headers.append('X-XSRF-TOKEN', this.getCookie('XSRF-TOKEN'));
+        return this.http.get(url, { headers: headers , withCredentials: true });
     }
 
     doDelete(url: string) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
         headers.append('X-XSRF-TOKEN', this.getCookie('XSRF-TOKEN'));
-        return this.http.delete(url, { headers: headers });
+        return this.http.delete(url, { headers: headers , withCredentials: true });
     }
 
     doPost(url: string, postJSON: string) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
         headers.append('X-XSRF-TOKEN', this.getCookie('XSRF-TOKEN'));
-        return this.http.post(url, postJSON, { headers: headers });
+        return this.http.post(url, postJSON, { headers: headers , withCredentials: true });
 
     }
 
@@ -33,7 +34,7 @@ export class HttpService {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
         headers.append('X-XSRF-TOKEN', this.getCookie('XSRF-TOKEN'));
-        return this.http.put(url, putJSON, { headers: headers });
+        return this.http.put(url, putJSON, { headers: headers , withCredentials: true });
 
     }
 
@@ -42,11 +43,4 @@ export class HttpService {
         var parts = value.split("; " + name + "=");
         if (parts.length == 2) return parts.pop().split(";").shift();
     }
-
-    //error handler
-    handleError(error: Response) {
-        location.reload();
-        return Observable.throw(error.json() || 'Server error: JournalVisitComponent');;
-    }
-
 }

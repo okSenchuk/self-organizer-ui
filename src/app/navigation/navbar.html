@@ -4,8 +4,14 @@
             <li *ngIf="!isAuthenticated" class="nav navbar-right">
                 <a routerLinkActive="active" routerLink="/login">Login</a>
             </li>
+            <li *ngIf="!isAuthenticated" class="nav navbar-right">
+                <a routerLinkActive="active" routerLink="/register">Registration</a>
+            </li>
+            <li *ngIf="isAuthenticated" class="nav navbar-right active navbar-fixed-bottom">
+                <a>Hi, {{firstName}} {{lastName}}</a>
+            </li>
             <li *ngIf="isAuthenticated" class="nav navbar-right" (click)="logout()">
-                <a href="#">Logout</a>
+                 <a routerLinkActive="active" routerLink="/logout">Logout</a>
             </li>
         </ul>
     </div>

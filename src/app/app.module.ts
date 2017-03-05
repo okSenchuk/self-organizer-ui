@@ -15,6 +15,14 @@ import { Navbar } from './navigation/navbar';
       {
         path: 'login',
         component: LoginComponent
+      },
+      {
+        path: 'logout',
+        component: LoginComponent
+      },
+      {
+        path: 'register',
+        component: RegistrationComponent
       }
     ])],
   declarations: [AppComponent, LoginComponent, RegistrationComponent, Navbar],
